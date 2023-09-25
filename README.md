@@ -1,102 +1,73 @@
-# API DJANGO
+# API de Gerenciamento de Alunos, Disciplinas e Tarefas
 
-    Esta é uma API desenvolvida em Django para ajudar os alunos a gerenciarem suas disciplinas e tarefas. A API permite a criação, atualização, exclusão e consulta de alunos, disciplinas e tarefas, bem como a associação de tarefas a alunos e disciplinas.
+Esta é uma API RESTful em Django desenvolvida para auxiliar os alunos no gerenciamento de suas disciplinas e tarefas.
 
-## Índice
+## Tecnologias Utilizadas
 
-- [Configuração do Ambiente](#configuração-do-ambiente)
-- [Modelos de Dados](#modelos-de-dados)
-- [Endpoints da API](#endpoints-da-api)
-- [Documentação da API](#documentação-da-api)
-- [Testando a API](#testando-a-api)
-- [Manipulação de Erros](#manipulação-de-erros)
-- [Validação de Dados](#validação-de-dados)
-- [Consistência de Nomenclatura](#consistência-de-nomenclatura)
+- **Django**: O framework web Python usado como base para a API.
+- **Django REST framework**: Uma extensão do Django que facilita a criação de APIs RESTful.
+- **Banco de Dados**: A API utiliza um banco de dados para armazenar informações de alunos, disciplinas e tarefas.
+- **RESTful**: A API segue os princípios do estilo arquitetural REST, o que significa que as operações são baseadas em URLs e métodos HTTP padrão.
 
-## Configuração do Ambiente
+## Funcionalidades Principais
 
-    Antes de iniciar, é necessário configurar o ambiente de desenvolvimento Django:
+A API oferece as seguintes funcionalidades:
 
-    1. Clone este repositório: `git clone https://github.com/Sir-Chronos/API_DJANGO.git`
-    2. Crie um ambiente virtual: `python -m venv "myenv"`
-    3. Ative o ambiente virtual: `source "myenv"/bin/activate` (Linux/macOS) ou `"myenv"\Scripts\activate` (Windows)
-    4. Instale as dependências: `pip install -r requirements.txt`
-    5. Configure as variáveis de ambiente, como as chaves secretas e as configurações do banco de dados, no arquivo `.env`.
+- **Alunos**: Criação, listagem, atualização e exclusão de alunos.
+- **Disciplinas**: Criação, listagem, atualização e exclusão de disciplinas.
+- **Tarefas**: Criação, listagem, atualização e exclusão de tarefas associadas a alunos e disciplinas.
+- **Relações**: Associação de tarefas a alunos e disciplinas.
 
-## Modelos de Dados
+## Uso da API
 
-    A aplicação possui três modelos de dados principais:
+Siga os passos abaixo para rodar a API localmente e importar as coleções no Postman para testar as funcionalidades.
 
-    - *Aluno*: Representa um aluno com campos `nome` e `email`.
-    - *Disciplina*: Representa uma disciplina com campos `nome` e `descricao`.
-    - *Tarefa*: Representa uma tarefa com campos `titulo`, `descricao`, `data_entrega`, `concluida`, associada a um aluno e a uma ou mais disciplinas.
+**Passo 1: Configuração do Ambiente**
 
-## Endpoints da API
+1. Certifique-se de que você ativou seu ambiente virtual como explicado [aqui](#como-criar-e-ativar-o-ambiente-virtual).
 
-    A API oferece os seguintes endpoints:
+**Passo 2: Instalação das Dependências**
 
-    1. *Listagem de Alunos*:
-    - `GET /api/students/`: Retorna a lista de todos os alunos.
+1. No terminal, navegue até o diretório raiz do seu projeto Django.
 
-    2. *Criação de um Aluno*:
-    - `POST /api/students/`: Permite a criação de um novo aluno.
+2. Execute o seguinte comando para instalar as dependências:
 
-    3. *Detalhes do Aluno*:
-    - `GET /api/students/<id>/`: Retorna detalhes de um aluno específico com base no ID.
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-    4. *Atualização de um Aluno*:
-    - `PUT /api/students/<id>/`: Permite a atualização dos detalhes de um aluno específico com base no ID.
+**Passo 3: Rodar a Aplicação Localmente**
 
-    5. *Exclusão de um Aluno*:
-    - `DELETE /api/students/<id>/`: Permite a exclusão de um aluno específico com base no ID. Todas as tarefas associadas a esse aluno serão excluídas ou desassociadas.
+1. Ainda no terminal, execute o seguinte comando para rodar a aplicação localmente:
 
-    6. *Listagem de Disciplinas*:
-    - `GET /api/subjects/`: Retorna a lista de todos os alunos.
+    ```bash
+    python manage.py runserver
+    ```
 
-    7. *Criação de uma Disciplina*:
-    - `POST /api/subjects/`: Permite a criação de um novo aluno.
+   Isso iniciará o servidor de desenvolvimento da aplicação.
 
-    8. *Detalhes da Disciplina*:
-    - `GET /api/subjects/<id>/`: Retorna detalhes de um aluno específico com base no ID.
+2. Acesse a API no seu navegador ou utilizando ferramentas como o [Postman](https://www.postman.com/).
 
-    9. *Atualização de uma Disciplina*:
-    - `PUT /api/subjects/<id>/`: Permite a atualização dos detalhes de um aluno específico com base no ID.
+**Passo 4: Importar Coleções no Postman**
 
-    10. *Exclusão de uma Disciplina*:
-    - `DELETE /api/subjects/<id>/`: Permite a exclusão de um aluno específico com base no ID. Todas as tarefas associadas a esse aluno serão excluídas ou desassociadas.
+1. Abra o Postman.
 
-    11. *Listagem de Tarefas*:
-    - `GET /api/tasks/`: Retorna a lista de todos os alunos.
+2. Clique em "Import" na barra de navegação esquerda.
 
-    12. *Criação de uma Tarefa*:
-    - `POST /api/tasks/`: Permite a criação de um novo aluno.
+3. Selecione a opção "Link" e cole o link da coleção de testes (se disponível).
 
-    13. *Detalhes da Tarefa*:
-    - `GET /api/tasks/<id>/`: Retorna detalhes de um aluno específico com base no ID.
+4. Ou selecione a opção "Upload Files" e faça o upload do arquivo de coleção fornecido.
 
-    14. *Atualização de uma Tarefa*:
-    - `PUT /api/tasks/<id>/`: Permite a atualização dos detalhes de um aluno específico com base no ID.
+**Passo 5: Testar a API no Postman**
 
-    15. *Exclusão de uma Tarefa*:
-    - `DELETE /api/tasks/<id>/`: Permite a exclusão de um aluno específico com base no ID. Todas as tarefas associadas a esse aluno serão excluídas ou desassociadas.
+1. Na barra de navegação esquerda do Postman, você encontrará as coleções importadas.
 
-    16. *Listagem de Tarefas de um Aluno*:
-    - `GET /api/students/<id>/tasks/`: Retorna a lista de todas as tarefas associadas a um aluno específico.
+2. Clique na coleção relevante e selecione o pedido que deseja testar.
 
-## Testando a API
+3. Preencha os parâmetros necessários no pedido (por exemplo, corpo JSON) e clique em "Send" para fazer a solicitação à API.
 
-    Você pode testar a API usando ferramentas como [Postman](https://www.postman.com/) ou [curl](https://curl.se/). Certifique-se de seguir a documentação para fazer solicitações corretamente.
+4. Analise a resposta da API para verificar se tudo está funcionando conforme o esperado.
 
-    Uma colection do postman se encontra disponivel no raiz do projeto
+Certifique-se de ajustar os endpoints e os parâmetros de acordo com as necessidades do seu projeto.
 
-## Manipulação de Erros
 
-    A API lida adequadamente com erros, fornecendo respostas de erro apropriadas com códigos de status HTTP significativos e mensagens de erro descritivas.
-
-## Validação de Dados
-
-    A API realiza validações adequadas dos dados de entrada, incluindo a verificação de datas, formatos de e-mail, campos obrigatórios e outros requisitos específicos para cada entidade.
-
-## Consistência de Nomenclatura
-
-    Os nomes de endpoints, campos de modelos e respostas da API seguem uma nomenclatura consistente e fácil de entender, seguindo as convenções recomendadas.

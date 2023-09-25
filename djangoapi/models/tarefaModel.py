@@ -14,7 +14,7 @@ class Tarefa(models.Model):
     # Define um relacionamento muitos para um (ForeignKey) com o modelo 'Aluno'.
     # 'on_delete=models.CASCADE' especifica que, se o aluno associado for excluído, a tarefa também será excluída.
     # 'blank=False' e 'null=False' indicam que este campo é obrigatório e não pode ser deixado em branco ou nulo.
-    aluno_delegado = models.ForeignKey(Aluno, on_delete=models.CASCADE, blank=False, null=False)
+    aluno_resposavel = models.ForeignKey(Aluno, on_delete=models.CASCADE, blank=False, null=False)
     
     # Define um relacionamento muitos para muitos (ManyToMany) com o modelo 'Disciplina'.
     # Isso permite que uma tarefa esteja associada a várias disciplinas.
