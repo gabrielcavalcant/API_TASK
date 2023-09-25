@@ -1,0 +1,523 @@
+{
+	"info": {
+		"_postman_id": "df58b9f8-d3a2-44de-8709-247c8bad44a2",
+		"name": "API_DJANGO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29465503"
+	},
+	"item": [
+		{
+			"name": "Alunos",
+			"item": [
+				{
+					"name": "Listar alunos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/alunos/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"alunos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar aluno",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nome",
+									"value": "Gabriel Teodoro",
+									"description": "Nome do aluno",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "teodoro@gmail.com",
+									"description": "Campo do aluno",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/alunos/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"alunos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar aluno",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nome",
+									"value": "Talia Gonçalves",
+									"description": "Novo nome",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "talia@gmail.com",
+									"description": "Novo email",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/alunos/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"alunos",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar aluno",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nome",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/alunos/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"alunos",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar aluno",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/alunos/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"alunos",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Scripts para requisições ao endpoint alunos"
+		},
+		{
+			"name": "Disciplinas",
+			"item": [
+				{
+					"name": "Listar disciplinas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/disciplinas/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"disciplinas",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar nova desciplina",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nome",
+									"value": "Matemática",
+									"description": "Nome da disciplina",
+									"type": "text"
+								},
+								{
+									"key": "descricao",
+									"value": "Máteria voltada ao conhecimento dos números",
+									"description": "descrição da mesma",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/disciplinas/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"disciplinas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar disciplina",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nome",
+									"value": "Inglês",
+									"description": "Novo nome da materia",
+									"type": "text"
+								},
+								{
+									"key": "descricao",
+									"value": "Aula voltada ao ensino do vocabulário estrangeiro inglês",
+									"description": "Nova desrição",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/disciplinas/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"disciplinas",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mostrar disciplina",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/disciplinas/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"disciplinas",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/disciplinas/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"disciplinas",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Scripts para requisições ao endpoint disciplina"
+		},
+		{
+			"name": "Tarefas",
+			"item": [
+				{
+					"name": "Listar tarefas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/tarefas/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tarefas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar tarefa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "titulo",
+									"value": "Vai da certo",
+									"description": "titulo da tarefa",
+									"type": "text"
+								},
+								{
+									"key": "descricao",
+									"value": "tem que da certo",
+									"description": "descrição da tarefa",
+									"type": "text"
+								},
+								{
+									"key": "data_entrega",
+									"value": "2023-10-20",
+									"description": "data de entrega",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "True",
+									"description": "status True or False de conclusão",
+									"type": "text"
+								},
+								{
+									"key": "aluno_delegado",
+									"value": "1",
+									"description": "Aluno responsavel",
+									"type": "text"
+								},
+								{
+									"key": "disciplinas",
+									"value": "1",
+									"description": "lista de disciplinas associadas as tarefas",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/tarefas/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tarefas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar tarefa",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"Tarefa 1\",\r\n  \"descricao\": \"Descrição da Tarefa 1\",\r\n  \"data_entrega\": \"2023-09-30\",\r\n  \"status\": false,\r\n  \"aluno_delegado\": 1, \r\n  \"disciplinas\": [1, 2]  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/tarefas/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tarefas",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar tarefa",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/tarefas/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tarefas",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Scripts para requisições ao endpoint tarefas"
+		},
+		{
+			"name": "Listar tarefas do aluno",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
