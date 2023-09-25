@@ -417,7 +417,7 @@
 									"type": "text"
 								},
 								{
-									"key": "aluno_delegado",
+									"key": "aluno_responsavel",
 									"value": "1",
 									"description": "Aluno responsavel",
 									"type": "text"
