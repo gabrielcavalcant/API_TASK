@@ -456,7 +456,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"titulo\": \"Tarefa 1\",\r\n  \"descricao\": \"Descrição da Tarefa 1\",\r\n  \"data_entrega\": \"2023-09-30\",\r\n  \"status\": false,\r\n  \"aluno_delegado\": 1, \r\n  \"disciplinas\": [1, 2]  \r\n}",
+							"raw": "{\r\n  \"titulo\": \"Tarefa 1\",\r\n  \"descricao\": \"Descrição da Tarefa 1\",\r\n  \"data_entrega\": \"2023-09-30\",\r\n  \"status\": false,\r\n  \"aluno_responsavel\": 1, \r\n  \"disciplinas\": [1, 2]  \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
